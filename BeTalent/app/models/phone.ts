@@ -7,8 +7,8 @@ export default class Phone extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-  @belongsTo(() => Customer)
-  declare customer: BelongsTo<typeof Customer>
+  @column()
+  declare customer_id: number
 
   @column()
   declare phone: string
@@ -18,4 +18,7 @@ export default class Phone extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
+  @belongsTo(() => Customer)
+  declare customer: BelongsTo<typeof Customer>
 }

@@ -9,11 +9,11 @@ export default class Sale extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-  @belongsTo(() => Customer)
-  declare customer: BelongsTo<typeof Customer>
+  @column()
+  declare customer_id: number
 
-  @belongsTo(() => Product)
-  declare product: BelongsTo<typeof Product>
+  @column()
+  declare product_id: number
 
   @column()
   declare quantity: number
@@ -29,4 +29,10 @@ export default class Sale extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
+  @belongsTo(() => Customer)
+  declare customer: BelongsTo<typeof Customer>
+
+  @belongsTo(() => Product)
+  declare product: BelongsTo<typeof Product>
 }

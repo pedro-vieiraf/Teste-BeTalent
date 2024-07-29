@@ -6,7 +6,7 @@ export default class extends BaseSeeder {
     await Customer.createMany([
       {
         name: 'teste1',
-        cpf: 12345678901,
+        cpf: 12345678910,
       },
       {
         name: 'teste2',
